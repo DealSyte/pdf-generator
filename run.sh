@@ -8,7 +8,9 @@ rm -fr folder*
 rm -fr BFF*
 
 echo "installing deps"
-npm install
+npm init -y
+npm install pdfkit
+npm install uuid
 clear
 
 echo "done with deps"
