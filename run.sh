@@ -42,4 +42,14 @@ echo "creating BFF with 350 files"
 	cp -R BFF BFFdouble
 	cp -R folder200 BFFdouble
 clear
+echo "Downloading 25mb file"
+mkdir bigFiles
+wget https://research.nhm.org/pdfs/10840/10840.pdf
+mv 10840.pdf bigFiles/
+echo "creating txt files"
+mkdir txtFiles
+base64 /dev/urandom | head -c 10000000 > 10MbFile.txt 
+base64 /dev/urandom | head -c 20000000 > 20MbFile.txt 
+base64 /dev/urandom | head -c 30000000 > 300MbFile.txt 
+mv *.txt txtFiles/
 exit
